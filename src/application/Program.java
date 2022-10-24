@@ -1,5 +1,6 @@
 package application;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import model.dao.DaoFactory;
@@ -30,6 +31,12 @@ public class Program {
 		for (Seller s : sellersFindAll) {
 			System.out.println(s);
 		}
+		
+		System.out.println("\n=======INSERT SELLER=======");
+		LocalDate date = LocalDate.parse("1990-07-12");
+		Seller newSeller = new Seller(null, "Greg", "greg@email.com", date, 4000.00, department);
+		sellerDao.insert(newSeller);
+		System.out.println("Inserted! New seller id: " + newSeller.getId());
 	}
 
 }
