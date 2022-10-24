@@ -35,8 +35,14 @@ public class Program {
 		System.out.println("\n=======INSERT SELLER=======");
 		LocalDate date = LocalDate.parse("1990-07-12");
 		Seller newSeller = new Seller(null, "Greg", "greg@email.com", date, 4000.00, department);
-		sellerDao.insert(newSeller);
-		System.out.println("Inserted! New seller id: " + newSeller.getId());
+//		sellerDao.insert(newSeller);
+//		System.out.println("Inserted! New seller id: " + newSeller.getId());
+		
+		System.out.println("\n=======UPDATE SELLER=======");
+		seller = sellerDao.findById(2);
+		seller.setName("Bob Waine");
+		sellerDao.update(seller);
+		System.out.println("Update completed");
 	}
 
 }
