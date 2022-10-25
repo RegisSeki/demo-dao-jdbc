@@ -12,8 +12,13 @@ public class Program2 {
 		
 		System.out.println("=======INSERT DEPARTMENT=======");
 		Department newDepartment = new Department(null, "Food");
-		departmentDao.insert(newDepartment);
-		System.out.println("Inserted! New department id: " + newDepartment.getId());
+//		departmentDao.insert(newDepartment);
+//		System.out.println("Inserted! New department id: " + newDepartment.getId());
+		
+		System.out.println("=======UPDATE DEPARTMENT=======");
+		Department updateDepartment = new Department(7, "New Food");
+		departmentDao.update(updateDepartment);
+		System.out.println("Update completed!");
 	}
 
 }
